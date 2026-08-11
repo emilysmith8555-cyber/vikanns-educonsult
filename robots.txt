@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emilysmith8555-cyber.github.io/vikanns-educonsult/sitemap.xml
