@@ -1,3 +1,13 @@
+#!/usr/bin/env bash
+set -e
+cd ~/VikannsWebsite
+
+echo "==> Rewriting site from scratch per new content brief..."
+
+# ---------------------------------------------------------------------------
+# index.html
+# ---------------------------------------------------------------------------
+cat > index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -372,3 +382,315 @@
 <script src="script.js"></script>
 </body>
 </html>
+EOF
+
+# ---------------------------------------------------------------------------
+# style.css — rewritten fresh, green/white theme retained
+# ---------------------------------------------------------------------------
+cat > style.css << 'EOF'
+:root {
+  --green: #008751;
+  --green-dark: #00693e;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --muted: #5a5a5a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+}
+
+h1, h2, h3 { line-height: 1.25; }
+a { text-decoration: none; color: inherit; }
+
+/* ---------------- Navbar ---------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 42px; width: auto; display: block; }
+.logo-text { font-weight: 800; font-size: 1.1rem; color: var(--green-dark); }
+.nav-links { list-style: none; display: flex; gap: 22px; flex: 1; justify-content: center; }
+.nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text); transition: color 0.2s; }
+.nav-links a:hover { color: var(--green); }
+.nav-cta { white-space: nowrap; padding: 10px 20px !important; }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--green); }
+
+/* ---------------- Buttons ---------------- */
+.btn-primary {
+  display: inline-block;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); background: var(--green-dark); }
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--green);
+  color: var(--green-dark);
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 30px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover { background: var(--green); color: var(--white); }
+.btn-outline-light {
+  display: inline-block;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 30px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-light:hover { background: var(--white); color: var(--green-dark); }
+.center-btn { text-align: center; margin-top: 20px; }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--white);
+  padding: 40px 20px;
+}
+.hero-slideshow { position: absolute; inset: 0; }
+.slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; }
+.slide.active { opacity: 1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,135,81,0.6), rgba(0,0,0,0.6)); }
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.eyebrow { letter-spacing: 2px; font-weight: 700; font-size: 0.9rem; margin-bottom: 14px; opacity: 0.9; }
+.hero-content h1 { font-size: 2.4rem; margin-bottom: 18px; }
+.hero-content p { font-size: 1.05rem; margin-bottom: 20px; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.hero-tags { font-size: 0.85rem; opacity: 0.85; letter-spacing: 1px; }
+
+/* ---------------- Sections generic ---------------- */
+section { padding: 70px 24px; max-width: 1100px; margin: 0 auto; }
+section h2 { text-align: center; font-size: 2rem; color: var(--green-dark); margin-bottom: 16px; }
+.section-lead { text-align: center; max-width: 760px; margin: 0 auto 30px; color: var(--muted); font-size: 1.05rem; }
+
+/* ---------------- Trust strip ---------------- */
+.trust-strip { background: #f4fbf7; text-align: center; border-radius: 20px; margin: 40px auto; max-width: 1100px; }
+.trust-strip p { max-width: 720px; margin: 0 auto 12px; color: var(--muted); }
+.strip-tagline { font-weight: 700; color: var(--green-dark) !important; }
+
+/* ---------------- About ---------------- */
+.about p { max-width: 780px; margin: 0 auto 14px; text-align: center; color: var(--muted); }
+.pip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 30px; }
+.pip-item { background: #f4fbf7; border-radius: 14px; padding: 26px; text-align: center; }
+.pip-item h3 { color: var(--green-dark); margin-bottom: 10px; }
+.pip-item p { color: var(--muted); font-size: 0.95rem; }
+
+/* ---------------- Services ---------------- */
+.service-block { border-top: 1px solid #e0f0e6; padding: 34px 0; }
+.service-block:first-of-type { border-top: none; }
+.service-num { color: var(--green); font-weight: 800; font-size: 1.6rem; }
+.service-block h3 { color: var(--green-dark); margin: 6px 0 4px; font-size: 1.35rem; }
+.service-tagline { font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.service-block p { color: var(--muted); margin-bottom: 12px; }
+.service-block ul { margin: 0 0 16px 20px; color: var(--muted); }
+.service-block li { margin-bottom: 4px; }
+.disclaimer-inline { font-size: 0.85rem; font-style: italic; color: var(--muted); margin-bottom: 14px; }
+.disclaimer-inline.center { text-align: center; max-width: 700px; margin: 20px auto 0; }
+
+/* ---------------- Destinations ---------------- */
+.destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+.destination-card { background: #f4fbf7; border: 1px solid #e0f0e6; border-radius: 14px; padding: 26px; text-align: center; transition: transform 0.25s; }
+.destination-card:hover { transform: translateY(-6px); }
+.destination-card h3 { color: var(--green-dark); margin-bottom: 10px; }
+.destination-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 16px; }
+
+/* ---------------- How it works ---------------- */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
+.step-item { text-align: center; }
+.step-num { display: inline-block; background: var(--green); color: var(--white); font-weight: 800; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; margin-bottom: 10px; }
+.step-item h3 { color: var(--green-dark); margin-bottom: 8px; font-size: 1.05rem; }
+.step-item p { color: var(--muted); font-size: 0.92rem; }
+
+/* ---------------- Why Vikanns ---------------- */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.why-item h3 { color: var(--green-dark); margin-bottom: 8px; }
+.why-item p { color: var(--muted); font-size: 0.92rem; }
+
+/* ---------------- Funding feature ---------------- */
+.funding-feature { background: var(--green); color: var(--white); border-radius: 20px; text-align: center; }
+.funding-feature h2, .funding-feature .section-lead { color: var(--white); }
+.funding-feature p { max-width: 720px; margin: 0 auto 8px; opacity: 0.95; }
+.funding-feature .btn-primary { background: var(--white); color: var(--green-dark); }
+.funding-feature .btn-primary:hover { background: #eee; }
+.funding-feature .disclaimer-inline { color: rgba(255,255,255,0.85); }
+
+/* ---------------- Student stories ---------------- */
+.stories { text-align: center; }
+.stories-list { font-size: 1.1rem; color: var(--muted); margin: 16px 0; }
+.stories-cta-line { font-size: 1.2rem; margin: 14px 0; color: var(--green-dark); }
+
+/* ---------------- Vision ---------------- */
+.vision { text-align: center; }
+.vision p { max-width: 720px; margin: 0 auto 14px; color: var(--muted); }
+.vision-line { font-weight: 700; color: var(--green-dark); font-size: 1.1rem; }
+
+/* ---------------- Values ---------------- */
+.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+.value-item { text-align: center; }
+.value-item h3 { color: var(--green-dark); margin-bottom: 6px; }
+.value-item p { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------------- Resources ---------------- */
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.resource-card { background: #f4fbf7; border: 1px solid #e0f0e6; border-radius: 14px; padding: 26px; text-align: center; }
+.resource-card h3 { color: var(--green-dark); margin-bottom: 10px; font-size: 1.05rem; }
+.resource-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+
+/* ---------------- FAQ ---------------- */
+.faq details { background: #f4fbf7; border: 1px solid #e0f0e6; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+.faq summary { font-weight: 600; color: var(--green-dark); cursor: pointer; }
+.faq p { margin-top: 10px; color: var(--muted); }
+
+/* ---------------- Contact ---------------- */
+.contact { text-align: center; }
+.contact-form { max-width: 520px; margin: 10px auto 30px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  padding: 12px 14px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 1rem; width: 100%;
+}
+.contact-form button { align-self: center; margin-top: 6px; }
+.contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px; }
+.contact-info a { background: var(--green); color: var(--white); padding: 12px 18px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+.contact-info a i { margin-right: 6px; }
+.contact-info a:hover { background: var(--green-dark); }
+.address { margin-top: 20px; color: var(--muted); }
+
+/* ---------------- Final CTA ---------------- */
+.final-cta { background: var(--green-dark); color: var(--white); text-align: center; border-radius: 20px; }
+.final-cta p { max-width: 600px; margin: 0 auto 24px; opacity: 0.95; }
+.final-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.final-cta .btn-primary { background: var(--white); color: var(--green-dark); }
+
+/* ---------------- Footer ---------------- */
+footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 30px; }
+.footer-col h3 { margin-bottom: 8px; }
+.footer-col h4 { margin-bottom: 12px; color: #b8e0c8; }
+.footer-col a, .footer-col p { display: block; color: rgba(255,255,255,0.85); font-size: 0.92rem; margin-bottom: 8px; }
+.footer-col a:hover { color: var(--white); }
+.footer-disclaimer { max-width: 900px; margin: 0 auto 16px; font-size: 0.78rem; color: rgba(255,255,255,0.6); text-align: center; }
+.footer-copyright { text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+/* ---------------- WhatsApp floating button ---------------- */
+.whatsapp-float {
+  position: fixed; bottom: 24px; right: 24px;
+  background: #25d366; color: var(--white);
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 200; animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ---------------- Scroll reveal ---------------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------------- Mobile ---------------- */
+@media (max-width: 900px) {
+  .nav-cta { display: none; }
+}
+@media (max-width: 760px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--white); flex-direction: column; align-items: center;
+    padding: 16px 0; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  }
+  .nav-links.open { display: flex; }
+  .hero-content h1 { font-size: 1.7rem; }
+}
+EOF
+
+# ---------------------------------------------------------------------------
+# script.js
+# ---------------------------------------------------------------------------
+cat > script.js << 'EOF'
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+(function () {
+  const slides = document.querySelectorAll('.hero-slideshow .slide');
+  let current = 0;
+  if (slides.length > 1) {
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4500);
+  }
+})();
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+EOF
+
+echo "==> Site rewritten. Verifying key pieces are present..."
+grep -c "section" index.html
+grep -n "team-green.jpg\|team-white.jpg\|logo.png\|formspree" index.html
+
+git add -A
+git -c user.email="site@vikanns.local" -c user.name="Vikanns Site Bot" commit -q -m "Full site rewrite: new content structure per updated brief"
+git push
+
+echo ""
+echo "======================================================================"
+echo " Done. Live in a minute or two at:"
+echo "   https://emilysmith8555-cyber.github.io/vikanns-ltd/"
+echo "======================================================================"
+
