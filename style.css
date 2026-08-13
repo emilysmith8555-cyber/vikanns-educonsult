@@ -283,3 +283,7 @@ footer {
   font-size: 1.15rem;
   color: var(--green-dark);
 }
+
+/* ---------------- Brand icons in Contact section ---------------- */
+.contact-info a i { margin-right: 8px; }
+.whatsapp-float i { font-size: 1.6rem; }
