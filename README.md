@@ -4,7 +4,7 @@ Static site for Vikanns Educonsult Ltd, a Nigeria-based study-abroad and visa
 consultancy. Plain HTML/CSS/JS, no build step, deployed via GitHub Pages.
 
 ## Live site
-https://emilysmith8555-cyber.github.io/vikanns-educonsult/
+https://emilysmith8555-cyber.github.io/vikanns-ltd/
 
 ## Structure
 - `index.html` — all page content
