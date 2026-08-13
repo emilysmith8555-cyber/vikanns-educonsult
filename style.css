@@ -264,3 +264,10 @@ footer {
   .nav-links.open { display: flex; }
   .hero-content h1 { font-size: 1.9rem; }
 }
+
+/* ---------------- Logo image ---------------- */
+.logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
