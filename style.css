@@ -271,3 +271,15 @@ footer {
   width: auto;
   display: block;
 }
+
+/* ---------------- Logo text beside the image ---------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-text {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--green-dark);
+}
