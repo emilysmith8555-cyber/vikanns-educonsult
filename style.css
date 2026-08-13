@@ -287,3 +287,47 @@ footer {
 /* ---------------- Brand icons in Contact section ---------------- */
 .contact-info a i { margin-right: 8px; }
 .whatsapp-float i { font-size: 1.6rem; }
+
+/* ---------------- FAQ ---------------- */
+.faq details {
+  background: #f4fbf7;
+  border: 1px solid #e0f0e6;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.faq summary {
+  font-weight: 600;
+  color: var(--green-dark);
+  cursor: pointer;
+}
+.faq p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ---------------- Contact form ---------------- */
+.contact-form {
+  max-width: 480px;
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.contact-form .btn-primary {
+  align-self: center;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+.contact-form .btn-primary:hover { background: var(--green-dark); }
