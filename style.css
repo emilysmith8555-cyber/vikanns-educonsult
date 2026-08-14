@@ -248,3 +248,14 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
   .nav-links.open { display: flex; }
   .hero-content h1 { font-size: 1.7rem; }
 }
+
+/* ---------------- Contact form label ---------------- */
+.form-label {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--green-dark);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
