@@ -267,13 +267,6 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
   margin-bottom: 8px;
 }
 
-/* ---------------- Destination flag-color bars ---------------- */
-.flag-bar { display: block; height: 8px; border-radius: 6px; margin: -26px -26px 18px; }
-.flag-uk { background: linear-gradient(90deg, #012169 33%, #ffffff 33% 66%, #C8102E 66%); }
-.flag-ca { background: linear-gradient(90deg, #FF0000 33%, #ffffff 33% 66%, #FF0000 66%); }
-.flag-nl { background: linear-gradient(180deg, #AE1C28 33%, #ffffff 33% 66%, #21468B 66%); }
-.flag-eu { background: linear-gradient(90deg, #003399, #FFCC00); }
-.flag-nz { background: linear-gradient(90deg, #00247D 33%, #CC142B 33% 66%, #ffffff 66%); }
 
 /* ---------------- Register Now button ---------------- */
 .btn-register {
@@ -286,3 +279,18 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
   transition: transform 0.2s, background 0.2s;
 }
 .btn-register:hover { transform: translateY(-2px); background: #ffdb4d; }
+
+/* ---------------- Real flag icons beside country names ---------------- */
+.destination-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.flag-icon {
+  width: 42px;
+  height: 30px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  background-size: cover;
+}
