@@ -45,3 +45,16 @@ document.addEventListener('click', function (event) {
     navLinks.classList.remove('open');
   }
 });
+
+// Our Values floating image slideshow
+(function () {
+  const vSlides = document.querySelectorAll('.values-slideshow .v-slide');
+  let vCurrent = 0;
+  if (vSlides.length > 1) {
+    setInterval(() => {
+      vSlides[vCurrent].classList.remove('active');
+      vCurrent = (vCurrent + 1) % vSlides.length;
+      vSlides[vCurrent].classList.add('active');
+    }, 3200);
+  }
+})();
