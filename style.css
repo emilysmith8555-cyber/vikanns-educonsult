@@ -403,10 +403,12 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .partner-cta h3 { color: var(--green-dark); margin-bottom: 8px; }
 .partner-cta p { color: var(--muted); margin-bottom: 16px; }
 
-/* ---------------- Footer logo ---------------- */
-.footer-logo {
-  height: 46px;
+
+/* ---------------- Footer logo (matches nav sizing) ---------------- */
+.footer-logo-img {
+  height: 42px;
   width: auto;
+  display: block;
   margin-bottom: 10px;
-  filter: brightness(0) invert(1);
+  border-radius: 6px;
 }
