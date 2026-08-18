@@ -478,3 +478,27 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .footer-col:nth-child(2) { grid-column: 1; }
 .footer-col:nth-child(3) { grid-column: 2; }
 .footer-col:nth-child(4) { grid-column: 1 / -1; }
+
+/* ---------------- Newsletter ---------------- */
+.newsletter { text-align: center; }
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 13px 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+.newsletter-note {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
