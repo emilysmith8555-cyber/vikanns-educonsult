@@ -530,3 +530,18 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
   padding: 18px; margin-bottom: 12px; text-align: left;
 }
 .elig-result-card h4 { color: var(--green-dark); margin-bottom: 6px; }
+
+/* ---------------- Destination pages ---------------- */
+.dest-hero {
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color: var(--white);
+  text-align: center;
+  padding: 70px 24px 50px;
+}
+.flag-icon-lg { width: 72px; height: 52px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: inline-block; margin-bottom: 16px; }
+.dest-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.dest-hero p { opacity: 0.95; max-width: 600px; margin: 0 auto; }
+.dest-content { max-width: 800px; margin: 0 auto; padding: 50px 24px; }
+.dest-content h2 { text-align: left; font-size: 1.3rem; color: var(--green-dark); margin: 34px 0 10px; }
+.dest-content h2:first-child { margin-top: 0; }
+.dest-content p { color: var(--muted); margin-bottom: 6px; }
