@@ -75,3 +75,63 @@ document.addEventListener('click', function (event) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+// Eligibility Checker — multi-step navigation
+(function () {
+  const steps = document.querySelectorAll('.elig-step');
+  if (steps.length === 0) return;
+  const totalSteps = steps.length;
+  let current = 1;
+  const nextBtn = document.getElementById('eligNext');
+  const backBtn = document.getElementById('eligBack');
+  const progressText = document.getElementById('eligProgressText');
+  const resultCards = document.getElementById('eligResultCards');
+
+  function showStep(n) {
+    steps.forEach(s => s.classList.remove('active'));
+    const target = document.querySelector('.elig-step[data-step="' + n + '"]');
+    if (target) target.classList.add('active');
+    progressText.textContent = 'Step ' + n + ' of ' + totalSteps;
+    backBtn.style.visibility = n === 1 ? 'hidden' : 'visible';
+    nextBtn.style.display = n === totalSteps ? 'none' : 'inline-block';
+    if (n === totalSteps) buildResults();
+  }
+
+  function buildResults() {
+    const checked = document.querySelectorAll('.elig-dest:checked');
+    resultCards.innerHTML = '';
+    if (checked.length === 0) {
+      resultCards.innerHTML = '<p>No destinations selected yet \u2014 go back to Step 4 to choose one or more.</p>';
+      return;
+    }
+    checked.forEach(function (box) {
+      const card = document.createElement('div');
+      card.className = 'elig-result-card';
+      card.innerHTML = '<h4>' + box.value + '</h4><p>You have expressed interest in this destination. A Vikanns adviser can walk you through what this pathway may involve for your specific profile.</p>';
+      resultCards.appendChild(card);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      const activeStep = document.querySelector('.elig-step[data-step="' + current + '"]');
+      const requiredFields = activeStep.querySelectorAll('[required]');
+      for (const f of requiredFields) {
+        if (!f.value) { f.reportValidity(); return; }
+      }
+      if (current < totalSteps) {
+        current++;
+        showStep(current);
+      }
+    });
+  }
+  if (backBtn) {
+    backBtn.addEventListener('click', function () {
+      if (current > 1) {
+        current--;
+        showStep(current);
+      }
+    });
+  }
+  showStep(current);
+})();

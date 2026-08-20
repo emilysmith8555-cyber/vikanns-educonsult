@@ -54,7 +54,7 @@
     <h1>Study Abroad With a Clearer Plan</h1>
     <p>Find the right course, university, destination and funding pathway with personalised guidance from Vikanns.</p>
     <div class="hero-buttons">
-      <a href="#contact" class="btn-primary">Check My Eligibility</a>
+      <a href="#eligibility" class="btn-primary">Check My Eligibility</a>
       <a href="https://wa.me/2347032751486" target="_blank" rel="noopener" class="btn-outline">Talk to an Adviser</a>
       <a href="#services" class="btn-outline">Explore Study Options</a>
     </div>
@@ -69,6 +69,91 @@
 </section>
 
 <!-- ============================ ABOUT ============================ -->
+<section id="eligibility" class="eligibility reveal">
+  <h2>Check Your Study Abroad Eligibility</h2>
+  <p class="section-lead">Answer a few questions and discover which study pathways may fit your profile.</p>
+  <form id="eligibilityForm" class="eligibility-form" action="https://formspree.io/f/xqpzlewe" method="POST">
+    <input type="hidden" name="form_type" value="Eligibility Checker">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <p class="elig-progress" id="eligProgressText">Step 1 of 7</p>
+
+    <div class="elig-step active" data-step="1">
+      <h3>Personal Information</h3>
+      <input type="text" name="full_name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="whatsapp" placeholder="WhatsApp Number" required>
+      <input type="number" name="age" placeholder="Age" required min="10" max="100">
+      <input type="text" name="country_residence" placeholder="Country of Residence" required>
+    </div>
+
+    <div class="elig-step" data-step="2">
+      <h3>Academic Background</h3>
+      <input type="text" name="qualification" placeholder="Highest Qualification" required>
+      <input type="text" name="institution" placeholder="Institution">
+      <input type="text" name="field_of_study" placeholder="Field of Study">
+      <input type="text" name="grade" placeholder="Grade / GPA">
+      <input type="text" name="graduation_year" placeholder="Graduation Year">
+    </div>
+
+    <div class="elig-step" data-step="3">
+      <h3>Study Preference</h3>
+      <select name="degree_level" required>
+        <option value="">Preferred Degree Level</option>
+        <option>Bachelor's</option>
+        <option>Master's</option>
+        <option>MRes</option>
+        <option>PhD</option>
+        <option>Professional</option>
+        <option>Vocational</option>
+        <option>Certificate</option>
+      </select>
+      <input type="text" name="preferred_field" placeholder="Preferred Field">
+      <input type="text" name="preferred_intake" placeholder="Preferred Intake">
+    </div>
+
+    <div class="elig-step" data-step="4">
+      <h3>Destination</h3>
+      <p class="elig-hint">Select all that interest you:</p>
+      <label><input type="checkbox" name="destination_uk" value="United Kingdom" class="elig-dest"> United Kingdom</label>
+      <label><input type="checkbox" name="destination_canada" value="Canada" class="elig-dest"> Canada</label>
+      <label><input type="checkbox" name="destination_nz" value="New Zealand" class="elig-dest"> New Zealand</label>
+      <label><input type="checkbox" name="destination_nl" value="Netherlands" class="elig-dest"> Netherlands</label>
+      <label><input type="checkbox" name="destination_eu" value="Other Europe" class="elig-dest"> Other Europe</label>
+      <label><input type="checkbox" name="destination_other" value="Other" class="elig-dest"> Other</label>
+    </div>
+
+    <div class="elig-step" data-step="5">
+      <h3>English Language</h3>
+      <select name="english_test" required>
+        <option value="">Select an option</option>
+        <option>IELTS</option>
+        <option>TOEFL</option>
+        <option>PTE</option>
+        <option>Duolingo</option>
+        <option>Other</option>
+        <option>Not yet taken</option>
+      </select>
+    </div>
+
+    <div class="elig-step" data-step="6">
+      <h3>Budget</h3>
+      <input type="text" name="annual_budget" placeholder="Approximate annual education budget" required>
+    </div>
+
+    <div class="elig-step" data-step="7">
+      <h3>Your Preliminary Study Profile</h3>
+      <div id="eligResultCards"></div>
+      <p class="elig-disclaimer">This assessment provides preliminary guidance only. Final eligibility depends on the institution, programme, immigration authority and applicable requirements.</p>
+      <button type="submit" class="btn-primary">Speak With a Vikanns Adviser</button>
+    </div>
+
+    <div class="elig-nav">
+      <button type="button" id="eligBack" class="btn-outline">Back</button>
+      <button type="button" id="eligNext" class="btn-primary">Next</button>
+    </div>
+  </form>
+</section>
+
 <section id="about" class="about reveal">
   <h2>Who We Are</h2>
   <p class="section-lead">More than a consultancy. A company built around possibilities.</p>
