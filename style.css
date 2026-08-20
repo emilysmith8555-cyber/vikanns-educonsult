@@ -502,3 +502,11 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
   font-size: 0.82rem;
   color: var(--muted);
 }
+
+/* ---------------- Hero trust line ---------------- */
+.hero-trust {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
