@@ -545,3 +545,20 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .dest-content h2 { text-align: left; font-size: 1.3rem; color: var(--green-dark); margin: 34px 0 10px; }
 .dest-content h2:first-child { margin-top: 0; }
 .dest-content p { color: var(--muted); margin-bottom: 6px; }
+
+/* ---------------- Destination tap hint + learn-more label ---------------- */
+.tap-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-top: -18px;
+  margin-bottom: 24px;
+}
+.dest-tile-cta {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 6px;
+}
