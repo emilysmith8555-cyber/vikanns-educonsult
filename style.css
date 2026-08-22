@@ -601,3 +601,9 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 /* ---------------- Resource cards with metadata ---------------- */
 .resource-card-meta { display: flex; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; flex-wrap: wrap; }
 .resource-card-meta .article-category { font-size: 0.7rem; padding: 3px 10px; }
+
+/* ---------------- Contextual WhatsApp links ---------------- */
+.wa-alt { text-align: center; font-size: 0.85rem; margin-bottom: 20px; }
+.wa-alt a { color: #25d366; font-weight: 600; }
+.wa-alt-link, .wa-alt-link-light { display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #25d366; font-weight: 600; }
+.wa-alt-link-light { color: rgba(255,255,255,0.9); }
