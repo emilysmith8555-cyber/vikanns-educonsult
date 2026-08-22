@@ -135,3 +135,16 @@ document.addEventListener('click', function (event) {
   }
   showStep(current);
 })();
+
+// Consultation Booking — builds a pre-filled WhatsApp message from selections
+(function () {
+  const btn = document.getElementById('bookSubmit');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    const service = document.getElementById('bookService').value || 'a consultation';
+    const date = document.getElementById('bookDate').value || 'a date to be discussed';
+    const time = document.getElementById('bookTime').value || 'a time to be discussed';
+    const msg = 'Hello Vikanns, I would like to book a consultation for ' + service + ' on ' + date + ' at ' + time + '.';
+    window.open('https://wa.me/2347032751486?text=' + encodeURIComponent(msg), '_blank');
+  });
+})();
