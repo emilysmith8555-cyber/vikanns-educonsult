@@ -586,3 +586,18 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .journey-step h3 { color: var(--green-dark); font-size: 1.05rem; margin-bottom: 4px; }
 .journey-step h3 i { margin-right: 6px; color: var(--green); }
 .journey-step p { color: var(--muted); font-size: 0.92rem; }
+
+/* ---------------- Article pages ---------------- */
+.article-page { max-width: 760px; margin: 0 auto; padding: 50px 24px; }
+.article-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; font-size: 0.82rem; flex-wrap: wrap; }
+.article-category { background: var(--green); color: var(--white); padding: 4px 12px; border-radius: 20px; font-weight: 700; }
+.article-date, .article-readtime { color: var(--muted); }
+.article-page h1 { font-size: 1.9rem; color: var(--green-dark); margin-bottom: 24px; }
+.article-page h2 { font-size: 1.2rem; color: var(--green-dark); margin: 28px 0 8px; }
+.article-page p { color: var(--muted); margin-bottom: 8px; }
+.article-page ul { margin: 0 0 12px 20px; color: var(--muted); }
+.article-page li { margin-bottom: 4px; }
+
+/* ---------------- Resource cards with metadata ---------------- */
+.resource-card-meta { display: flex; gap: 8px; font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; flex-wrap: wrap; }
+.resource-card-meta .article-category { font-size: 0.7rem; padding: 3px 10px; }
