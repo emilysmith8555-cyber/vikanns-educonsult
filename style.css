@@ -609,3 +609,36 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .wa-alt-link-light { color: rgba(255,255,255,0.9); }
 
 /* ---------------- Scroll-to-top button, aligned with WhatsApp float ---------------- */
+
+/* ---------------- Universal hamburger nav (desktop + mobile) ---------------- */
+.menu-toggle { display: block !important; }
+.nav-links {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: var(--white) !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 16px 0 !important;
+  display: none !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08) !important;
+  gap: 10px 18px !important;
+}
+.nav-links.open { display: flex !important; }
+.nav-cta { display: inline-block !important; }
+
+/* ---------------- Let the site breathe on wide screens ---------------- */
+@media (min-width: 1400px) {
+  section, .navbar { max-width: 1500px; }
+}
+
+/* ---------------- Bigger Values slideshow on wide screens ---------------- */
+@media (min-width: 1024px) {
+  .values-slideshow { max-width: 640px; height: 520px; }
+}
+
+/* ---------------- Booking form labels ---------------- */
+.booking-label { font-size: 0.85rem; font-weight: 600; color: var(--green-dark); margin-bottom: -6px; }
