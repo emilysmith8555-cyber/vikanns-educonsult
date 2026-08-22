@@ -607,3 +607,11 @@ footer { background: #003d24; color: var(--white); padding: 50px 24px 20px; }
 .wa-alt a { color: #25d366; font-weight: 600; }
 .wa-alt-link, .wa-alt-link-light { display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #25d366; font-weight: 600; }
 .wa-alt-link-light { color: rgba(255,255,255,0.9); }
+
+/* ---------------- Scroll-to-top button, aligned with WhatsApp float ---------------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 94px;
+  right: 24px;
+  z-index: 199;
+}
